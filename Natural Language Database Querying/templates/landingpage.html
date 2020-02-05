@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Why SQL, just Google!</title>
+
+  <!-- Bootstrap core CSS -->
+  <link type = "text/css" href="{{ url_for('static',filename = 'styles/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="{{ url_for('static',filename = 'styles/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
+  <link href="{{ url_for('static',filename = 'styles/vendor/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- CSS Styles -->
+  <style>
+    .speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
+    .speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+    .speech img {float: right; width: 40px }
+  </style>
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static',filename = 'styles/css/landing-page.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Talk to your database in Natural Language and get Interactive Visualizations</a>
+      <a class="btn btn-primary" href="#" onclick="window.location.href = 'https://github.umn.edu/krish282/Trends-Marketplace';">Check it out on Github</a>
+    </div>
+  </nav>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Why SQL, when you can Google?</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <!-- Search Form -->
+          <form id="labnol" action = "http://localhost:5000/result" method = "POST">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-lg" name="q" id="transcript" placeholder="What's on your mind today..." />
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p class="lead mb-0">Voice Query</p>
+                <p>  </p>
+                <p>  </p>
+                <img onclick="startDictation()" float="right" src="{{ url_for('static',filename = 'styles/img/mike1.png')}}" width="45" height="45"/>
+              </div>
+
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Query Now!</button>
+              </div> 
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-check m-auto text-primary"></i>
+            </div>
+            <h3>NLTK</h3>
+            <p class="lead mb-0">Natural Language toolkit. Highly extendible for natural language queries!</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-screen-desktop m-auto text-primary"></i>
+            </div>
+            <h3>PyGal</h3>
+            <p class="lead mb-0">Interactive visualizations in SVG format which can be embedded in HTML Pages</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+            <div class="features-icons-icon d-flex">
+              <i class="icon-layers m-auto text-primary"></i>
+            </div>
+            <h3>Flask Web Framework</h3>
+            <p class="lead mb-0">Python Based Application Framework. Easy to get started. Also, did we mention it's free?!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Showcases -->
+  <section class="showcase">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+
+        <div class="col-lg-6 order-lg-2 text-white showcase-img">
+          <img src="{{ url_for('static',filename = 'styles/img/usecase1.jpg')}}" style="max-width:100%;max-height:100%;" />
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Quick results for Managers & Clients</h2>
+          <p class="lead mb-0">Reducing turnaround time to fetch results for non technical managers in product companies and clients in service based companies. Especially useful when outsourcing to foreign countries.</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 text-white showcase-img" >
+          <img src="{{ url_for('static',filename = 'styles/img/chatbots-header.png')}}" style="max-width:100%;max-height:100%;" />
+        </div>
+        <div class="col-lg-6 my-auto showcase-text">
+          <h2>Integrate with Chat-Bots</h2>
+          <p class="lead mb-0">Enables customers to obtain answers to the common queries like product availability, prices, discounts, et al. Querying through these chatbots eliminates the need for technical analysts and reduces man-hours.</p>
+        </div>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"">
+          <img src="{{ url_for('static',filename = 'styles/img/bg-showcase-3.jpg')}}" style="max-width:100%;max-height:100%;" />
+        </div>
+        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+          <h2>Improved Data Exploration for Analysts</h2>
+          <p class="lead mb-0">Equips analysts with ready-to-consume reports for the data exploration, enabling them to make faster and easier analyses</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Call to Action -->
+  <section class="call-to-action text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+      
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfaQ4MfSvIyvWVin3WG78ZqUEBJp-19OOgP-i6BHwIZPiUvGA/viewform?embedded=true" width="720" height="650" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <p class="lead mb-0">Find us on Linkedin</p>
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item" onclick="location.href='https://www.linkedin.com/in/rekha-mohandass';">
+              <a href="#">Rekha Mohandass</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item" onclick="location.href='https://www.linkedin.com/in/vijay-k-raghupathi';">
+              <a href="#">Vijay Raghupathi</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item" onclick="location.href='https://www.linkedin.com/in/harsh-seksaria/';">
+              <a href="#">Harsh Seksaria</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item" onclick="location.href='https://www.linkedin.com/in/darshika-sharma-04ba7b100/';">
+              <a href="#">Darshika Sharma</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item" onclick="location.href='https://www.linkedin.com/in/jashyant/';" > 
+              <a href="#">Jashyant S</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Trends Marketplace (Team 14) - MSBA Class of 2020.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static',filename = 'styles/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{ url_for('static',filename = 'styles/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <!-- HTML5 Speech Recognition API -->
+  <script>
+    function startDictation() {
+
+      if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+        var recognition = new webkitSpeechRecognition();
+
+        recognition.continuous = false;
+        recognition.interimResults = false;
+
+        recognition.lang = "en-US";
+        recognition.start();
+
+        recognition.onresult = function(e) {
+          document.getElementById('transcript').value
+                                   = e.results[0][0].transcript;
+          recognition.stop();
+          document.getElementById('labnol').submit();
+        };
+
+        recognition.onerror = function(e) {
+          recognition.stop();
+        }
+
+      }
+    }
+  </script>
+</body>
+ 
+
+
+
+
+
+
+</html>
