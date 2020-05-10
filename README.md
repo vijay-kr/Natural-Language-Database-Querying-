@@ -63,7 +63,7 @@ Equips analysts with ready-to-consume reports for the data exploration, enabling
 
 You are free to play around with nql.py and modify it to query your own database in natural language.
 
-**Feel free to get in touch for more information:** Harsh Seksaria / https://www.linkedin.com/in/harsh-seksaria/
+**Feel free to get in touch for more information:** Vijay K Raghupathi / https://www.linkedin.com/in/vijay-k-raghupathi
 
 **Team:** (L-R) Rekha Mohandass, Jashyant Sikhakholi, Harsh Seksaria, Vijay K Raghupati, Darshika Sharma
 
